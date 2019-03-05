@@ -2,13 +2,6 @@
  * Validation Regex Repository
  * Refer to https://www.owasp.org/index.php/OWASP_Validation_Regex_Repository
  */
-package sg.gov.spring.enterpriseone.core.util;
-
-
-/**
- * @author NCS Portal City
- *
- */
 public class RegexRepository {
 
 	/**

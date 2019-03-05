@@ -1,7 +1,4 @@
-/**
- * Email template helper
- */
-package sg.gov.spring.enterpriseone.core.util;
+
 
 import java.util.Map;
 
@@ -13,10 +10,6 @@ import org.apache.commons.lang3.text.StrSubstitutor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @author NCS Portal City
- *
- */
 public class MailTemplateUtil {
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(MailTemplateUtil.class);

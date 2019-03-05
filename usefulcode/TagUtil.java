@@ -1,16 +1,10 @@
-/**
- * 
- */
-package sg.gov.spring.enterpriseone.organisation.util;
+
 
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 
-/**
- * @author NCS Portal City
- *
- */
+
 public class TagUtil {
 
 	/**

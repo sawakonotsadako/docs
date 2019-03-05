@@ -1,11 +1,7 @@
-package sg.gov.spring.enterpriseone.core.util;
 
 import org.apache.sling.api.SlingHttpServletRequest;
 
-/**
- * @author NCS Portal City
- *
- */
+
 public class RequestUtil {
 	/**
 	 * Get and trim parameter from request object

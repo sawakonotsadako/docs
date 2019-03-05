@@ -1,7 +1,4 @@
-/**
- * 
- */
-package sg.gov.spring.enterpriseone.organisation.util;
+
 
 import java.util.List;
 
@@ -9,11 +6,6 @@ import org.apache.commons.lang3.StringUtils;
 
 import flexjson.JSONSerializer;
 
-/**
- * JSON wrapper utility class for JSONSerializer 
- * @author NCS Portal City
- *
- */
 public class JsonUtil {
 
 	public static String toJson(List<Object> list){

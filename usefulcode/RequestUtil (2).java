@@ -1,16 +1,10 @@
-/**
- * 
- */
-package sg.gov.spring.enterpriseone.organisation.util;
+
 
 import org.apache.sling.api.SlingHttpServletRequest;
 
 import com.adobe.granite.xss.XSSAPI;
 
-/**
- * @author NCS Portal City
- *
- */
+
 public class RequestUtil {
 	
 	/**

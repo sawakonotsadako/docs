@@ -1,17 +1,10 @@
-/**
- * 
- */
-package sg.gov.spring.enterpriseone.organisation.util;
+
 
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import com.day.cq.wcm.api.Page;
 
-/**
- * @author NCS Portal City
- *
- */
 public class SiteMapUtil {
 
 	public static final String ETC_BASE = "/etc/designs/enterpriseone/corp/";

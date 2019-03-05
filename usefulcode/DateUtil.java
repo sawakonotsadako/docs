@@ -1,7 +1,4 @@
-/**
- * 
- */
-package sg.gov.spring.enterpriseone.core.util;
+
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,10 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.StringUtils;
 
-/**
- * @author NCS Portal City
- *
- */
+
 public class DateUtil {
 
 	public static final String TIME_STAMP = "yyyy-MM-dd HH:mm:ss";

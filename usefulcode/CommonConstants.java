@@ -1,4 +1,4 @@
-package sg.gov.spring.enterpriseone.core.util;
+
 
 public class CommonConstants {
 
@@ -6,7 +6,7 @@ public class CommonConstants {
 	public static final String CAPTCHA = "CAPTCHA";
 	public static final String ENTERPRISEONE_GROUP = "enterpriseone-users";
 
-	// config names located at /apps/enterpriseone/config/*
+	// 
 	public static final String CONFIG_COMMON = "sg.gov.spring.enterpriseone.common";
 	public static final String CONFIG_EMAIL = "sg.gov.spring.enterpriseone.email";
 

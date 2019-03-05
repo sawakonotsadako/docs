@@ -1,7 +1,4 @@
-/**
- *
- */
-package sg.gov.spring.enterpriseone.organisation.impl;
+
 
 import com.adobe.acs.commons.email.EmailService;
 import com.day.cq.commons.Externalizer;
@@ -14,22 +11,7 @@ import org.apache.sling.commons.osgi.PropertiesUtil;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sg.gov.spring.enterpriseone.core.domain.*;
-import sg.gov.spring.enterpriseone.core.exception.UserAlreadyExistException;
-import sg.gov.spring.enterpriseone.core.exception.UserSessionNotFoundException;
-import sg.gov.spring.enterpriseone.core.jpa.model.*;
-import sg.gov.spring.enterpriseone.core.model.EmailLog;
-import sg.gov.spring.enterpriseone.core.model.OrganisationAuditLog;
-import sg.gov.spring.enterpriseone.core.service.CoreFactoryService;
-import sg.gov.spring.enterpriseone.core.service.JpaService;
-import sg.gov.spring.enterpriseone.core.util.DateUtil;
-import sg.gov.spring.enterpriseone.core.util.PasswordUtil;
-import sg.gov.spring.enterpriseone.core.util.RegexRepository;
-import sg.gov.spring.enterpriseone.organisation.jpa.service.UserService;
-import sg.gov.spring.enterpriseone.organisation.service.*;
-import sg.gov.spring.enterpriseone.organisation.util.CaptchaUtil;
-import sg.gov.spring.enterpriseone.organisation.util.MessageConstants;
-import sg.gov.spring.enterpriseone.organisation.util.RequestUtil;
+
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -38,10 +20,7 @@ import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
-/**
- * @author NCS Portal City
- *
- */
+
 @Service
 @Component(immediate = true, metatype = true, label = "EnterpriseOne Organisation User Registration Service", name = "sg.gov.spring.enterpriseone.organisation.impl.OrganisationUserRegisterServiceImpl")
 public class OrganisationUserRegisterServiceImpl implements

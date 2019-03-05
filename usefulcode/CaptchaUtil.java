@@ -1,14 +1,7 @@
-/**
- * 
- */
-package sg.gov.spring.enterpriseone.organisation.util;
+
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-/**
- * @author NCS Portal City
- *
- */
 public class CaptchaUtil {
 
 	/**

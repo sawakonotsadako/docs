@@ -1,4 +1,4 @@
-package sg.gov.spring.enterpriseone.core.util;
+
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
