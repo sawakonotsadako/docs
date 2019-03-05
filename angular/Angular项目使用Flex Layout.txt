@@ -1,0 +1,9 @@
+1.Install the flex-layout module with npm:
+npm install @angular/flex-layout@latest --save
+2.Import the module in your app.module.ts and add it to the NgModule’s imports:
+import { FlexLayoutModule } from ‘@angular/flex-layout’;
+@NgModule({  
+    declarations: [ ... ],  
+    imports: [ ..., FlexLayoutModule ], 
+})
+export class AppModule { }

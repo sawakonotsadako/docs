@@ -1,0 +1,38 @@
+﻿Linux下登录mysql：
+(1) mysql -uroot -p
+
+查看mysql版本：
+(1) mysql -v
+(2) select version();
+(3) status
+
+解压tar.gz包：
+(1) tar zvxf xxx.tag.gz
+
+查找进程：
+(1) ps -ef | grep xxx
+
+开启关闭apache服务：
+(1) sudo service apache2 start
+(2) sudo service apache2 stop
+
+开启关闭nginx服务：
+(1) sudo service nginx start
+(2) sudo service nginx stop
+
+开启关闭mysql服务：
+(1) sudo service mysql start
+(2) sudo service mysql stop
+
+查找安装位置(包含了命令位置)：
+(1) whereis vim
+(2) whereis apache2
+(3) whereis nginx
+
+查找命令位置：
+(1) which nginx
+(2) which apache2
+(3) which vim
+
+vim设置高亮：
+在命令模式下输入 set hlsearch 

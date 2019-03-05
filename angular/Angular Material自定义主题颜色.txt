@@ -1,0 +1,110 @@
+
+Reference: https://coursetro.com/posts/code/116/Create-your-own-Angular-5-Material-Theme
+
+1.Create your own Angular Material Theme
+(1)Create a file in /src/ called theme.scss (or whatever you prefer).
+(2)Inside of it, we must import @angular/material/theming and include mat-core().
+(3)Before we continue with this file, we have to add the /themes.scss file to the styles array of /.angular.json file.
+(4)Let's do that now back in the /src/theme.scss file.
+   Notes:
+	When you specify new themes, you must specify an accent color along with the primary color. As long as you have at least those two variables, you can then reference either the mat-light-theme() mixin or the mat-dark-theme() mixin, and pass in your primary and accent variables.
+
+	After that, you @include the angular-material-theme mixin and pass in the previous defined mat-light-or-dark-theme mixin variable. 
+
+	When above done, the full code should now look like this:
+	
+		@import '~@angular/material/theming';
+		@include mat-core();
+
+		$custom-primary: mat-palette($mat-deep-purple);
+		$custom-accent:  mat-palette($mat-pink);
+
+		$custom-theme: mat-light-theme($custom-primary, $custom-accent);
+
+		@include angular-material-theme($custom-theme);
+		
+2.Changing to Material Design Dark Theming
+(1)Right now, our project is using the mat-light-theme mixin. To change it to the dark theme, we simply change the following:
+
+		// FROM
+		$custom-theme: mat-light-theme($custom-primary, $custom-accent);
+
+		// TO 
+		$custom-theme: mat-dark-theme($custom-primary, $custom-accent);
+		
+3.Expanding on Mat-Pallete
+In our example, we only specified the first argument of mat-pallete(), which is the actual palette. 
+
+It accepts 3 other optional arguments:
+
+Default Color
+Lighter Color
+Darker Color
+Let's modify our code to include a default color:
+
+$custom-primary: mat-palette($mat-deep-purple, 50);
+
+The "50" value comes from the list at Material.io Documentation(https://material.io/design/color/#color-color-palette) for each pallete. Lower numbers provide for a lighter background with a dark foreground, and vice-versa.
+
+Update the code to the following:
+
+$custom-primary: mat-palette($mat-deep-purple, 600);
+$custom-accent:  mat-palette($mat-lime, 100);
+
+Additionally, you can provide an optional warning pallete if you wish by altering the code:
+
+$custom-primary: mat-palette($mat-deep-purple, 600);
+$custom-accent:  mat-palette($mat-lime, 100);
+$custom-warn:    mat-palette($mat-red);
+
+$custom-theme: mat-dark-theme($custom-primary, $custom-accent, $custom-warn);
+
+3.Creating Multiple Themes
+
+If you need to, you can define multiple themes and apply them via a class. Let's give it a try:
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+$custom-primary: mat-palette($mat-deep-purple, 600);
+$custom-accent:  mat-palette($mat-lime, 100);
+$custom-warn:    mat-palette($mat-red);
+
+$custom-theme: mat-dark-theme($custom-primary, $custom-accent, $custom-warn);
+@include angular-material-theme($custom-theme);
+
+
+// ALTERNATIVE THEME
+
+$alt-primary: mat-palette($mat-yellow);
+$alt-accent:  mat-palette($mat-grey, 200);
+
+$alt-theme: mat-dark-theme($alt-primary, $alt-accent);
+
+.alternative {
+    @include angular-material-theme($alt-theme);
+}
+
+To use this alternative theme, you must attach a class of alternative in a parent container within the template.
+
+So, if you visit app.component.html, and wrapped all of the HTML in a parent div with the class of alternative, the result would look like this:
+
+4.Theming Specific Components
+Let's say for whatever reason, you only wanted to apply a theme to a specific component. In our case, let's say that component is a button:
+
+// FROM
+.alternative {
+    @include angular-material-theme($alt-theme);
+}
+
+// TO
+.alternative {
+    @include mat-button-theme($alt-theme);
+}
+
+If you save this, the result will show the regular purple toolbar defined in $custom-theme with the alternative color theme applied to just the buttons.
+
+
+
+
+

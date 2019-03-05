@@ -1,0 +1,14 @@
+1.Limit length of an array
+<div *ngFor="let item of items; let i=index">
+	<div *ngIf="i<9">
+		Contents output
+	</div>
+
+</div>
+
+or
+
+<div *ngFor="let item of (items ? items.slice(0,2): [])">
+	Contents output
+</div>
+

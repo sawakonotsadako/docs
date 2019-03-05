@@ -1,0 +1,91 @@
+﻿策略模式三要素:
+	环境
+	抽象策略
+	具体策略
+
+// 生产PayStrategystrategy的工厂->可以将工厂也看做环境
+public class Factory {
+  public static final String TYPE_ALI="ali";
+  public static final String TYPE_WECHAT="wechat";
+
+  private Factory() {
+  }
+  public static PayStrategy create(String type){
+      PayStrategy product=null;
+      if(TYPE_ALI.equals(type)){
+          product=new AliPayStrategy();
+      }else if(TYPE_WECHAT.equals(type)){
+          product=new WeChatPayStrategy();
+      }
+      return product;
+  }
+}
+
+// 环境
+public class ContextStrategy {
+    private PayStrategy strategy;
+    public ContextStrategy(){
+
+    }
+    public void payout(float money){
+        strategy.pay(money);//调用策略
+    }
+
+    public void setStrategy(PayStrategy strategy){
+        this.strategy=strategy;//设置策略类
+    }
+}
+
+// （抽象策略）支付方式
+public interface PayStrategy {
+    public void pay(float money);
+}
+
+// （具体策略）支付宝支付
+public class AliPayStrategy implements PayStrategy {
+
+    @Override
+    public void pay(float money) {
+        //调用支付宝的接口具体代码 略...
+        if(money<=200){
+            System.out.println("通过调用支付宝的接口"+"直接支付了"+money);
+        }else{
+            System.out.println("通过调用支付宝的接口"+"输入密码验证再支付了"+money);
+        }
+    }
+
+}
+
+// （具体策略）微信支付
+public class WeChatPayStrategy implements PayStrategy {
+
+    @Override
+    public void pay(float money) {
+        //调用微信的接口略。。。。
+        System.out.println("通过调用微信支付的接口支付了"+money);
+    }
+
+}
+
+用法一： 普通用法
+		// 初始化环境
+		ContextStrategy strategy=new ContextStrategy();
+		// 设置具体策略
+        strategy.setStrategy(new AliPayStrategy());
+		// 调用
+        strategy.payout(1000f);
+		// 下同
+        strategy.setStrategy(new WeChatPayStrategy());
+        strategy.payout(20f);
+
+
+用法二： 策略模式与工厂模式结合
+		// 设置具体策略
+		PayStrategy payStrategy=Factory.create(Factory.TYPE_ALI); 
+		// 调用, 使用它时会自行决定调用哪个实现类，这样减少了if else语句（java 多态）
+		payStrategy.pay(1000.0f);
+		// 下同
+		payStrategy=Factory.create(Factory.TYPE_WECHAT); 
+		payStrategy.pay(20.0f);
+		
+		

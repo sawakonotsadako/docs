@@ -1,0 +1,60 @@
+## List Docker CLI commands
+docker
+docker container --help
+
+## Display Docker version and info
+docker --version
+docker version
+docker info
+
+## Execute Docker image
+docker run hello-world
+docker run -p 4000:80 friendlyhello   
+docker build -t friendlyhello .
+
+## List Docker images
+docker image ls
+
+## List Docker containers (running, all, all in quiet mode)
+docker container ls
+docker container ls --all
+docker container ls -aq
+
+docker container stop <Container NAME or ID>
+
+## Get the docker IP address
+docker-machine ip
+
+## Proxy server settings
+ENV http_proxy host:port
+ENV https_proxy host:port
+
+## DNS settings
+Edit /etc/docker/daemon.json, as following:
+{
+  "dns": ["your_dns_address", "8.8.8.8"]
+}
+In the example above, the first element of the list is the address of your DNS server. 
+The second item is the Google’s DNS which can be used when the first one is not available.
+Before proceeding, save daemon.json and restart the docker service.
+
+sudo service docker restart
+
+Once fixed, retry to run the build command.
+
+
+## Share your image
+(1)Log in with your Docker
+docker login
+
+(2)Tag the image
+docker tag image username/repository:tag
+
+(3)Run docker image ls to see your newly tagged image.
+docker image ls
+
+(4)Publish the image
+docker push username/repository:tag
+
+(5)Pull and run the image from the remote repository
+docker run -p 4000:80 username/repository:tag

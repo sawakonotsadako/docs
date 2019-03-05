@@ -1,0 +1,1 @@
+http://blogs.adobe.com/experiencedelivers/experience-management/using-osgi-annotations-aem6-2/

@@ -1,0 +1,20 @@
+﻿本次安装使用vagrant1.9.1和virtualbox5.0.30, 其他版本不能保证。
+1. 安装VirtualBox (5.0.30)
+
+2. 安装Vagrant (1.9.1)
+
+3. 安装Cygwin或者Git Bash
+
+ $ vagrant box add {title} {url}
+ $ vagrant init {title}
+ $ vagrant up
+ 
+ 遇到的问题： vagrant up timeout
+ 诊断问题方式： 在vagrantfile里开启 vb.gui = true.
+ 解决方案是： 开机时按F10,开启virtual vt
+ 
+ 遇到的问题： vagrant up下载box时，返回404
+ 诊断问题方式： 看错误信息google
+ 解决方案是： 在vagrantfile里面添加一行：Vagrant::DEFAULT_SERVER_URL.replace('https://vagrantcloud.com')
+ 
+ 

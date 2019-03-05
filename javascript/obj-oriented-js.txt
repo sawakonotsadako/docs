@@ -1,0 +1,74 @@
+﻿
+1. JSON way:
+
+		var Circle={
+			"PI":3.14159,
+			"area":function(r){
+				return this.PI * r * r;
+			}
+		};
+		alert( Circle.area(1.0) );
+
+
+
+2. JSON Extension way:
+
+		var show={
+			btn:$('.div1'),
+			init:function(){
+				var that=this;
+				alert(this);
+				this.btn.click(function(){
+						that.change();
+						alert(this);
+					})
+				
+			},
+			change:function(){
+				this.btn.css({'background':'green'});
+
+			}
+		}
+		show.init();
+		
+3. Normal way:
+
+		function Circle(r) {
+			this.r = r;
+		}
+		Circle.PI = 3.14159;
+		Circle.prototype.area = function() {
+			return Circle.PI * this.r * this.r;
+		}
+
+		var c = new Circle(1.0);   
+		alert(c.area()); 
+		
+4. Factory way:
+
+		var Circle = function() {
+			var obj = new Object();
+			obj.PI = 3.14159;
+	   
+			obj.area = function( r ) {
+				return this.PI * r * r;
+			}
+			return obj;
+		}
+
+		var c = new Circle();
+		alert( c.area( 1.0 ) );
+		
+5. Factory way extension:
+
+		var Circle=function(r){
+			this.r=r;
+		}
+		Circle.PI = 3.14159; 
+		Circle.prototype={
+			area:function(){
+				return this.r*this.r*Circle.PI;
+			}
+		}
+		var obj=new Circle(1.0);
+		alert(obj.area())

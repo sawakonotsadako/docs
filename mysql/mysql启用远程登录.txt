@@ -1,0 +1,27 @@
+﻿-- 步骤
+(1) 注释 bind-address 
+(2) 执行 grant all privileges on *.* to 'sawakonotsadako'@'%' identified by 'sawakonotsadako' with grant option;
+
+-- 登录mysql
+mysql -uroot -proot
+
+-- 查看系统用户
+select Host,User,Password from mysql.user;
+ 
+-- 创建一个远程用户 
+create user test identified by '123456'; 
+  
+-- 分配权限 
+grant all privileges on *.* to 'test'@'%'identified by '123456' with grant option; 
+
+-- 刷新mysql用户权限
+flush privileges ; 
+
+-- 修改指定用户密码 
+update mysql.user set password=password('新密码') where User="test" and Host="localhost"; 
+ 
+-- 删除用户 
+delete from user where User='test' and Host='localhost';
+
+
+

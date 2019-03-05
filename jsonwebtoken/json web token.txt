@@ -1,0 +1,29 @@
+﻿一：Header:
+	contains:
+	type of the token
+	hasing algorithm
+	
+二：Payload:
+	contains:
+		claims (statements about an entity, typically the user, three types of the claims: registered, public, private)
+		//registered claims:(predefined, not mandatory but recommended)
+			iss, exp, sub, aud and others  (Notice that the claim names are only three characters long as JWT is meant to be compact)
+			
+		public claims:(can be defined by using jwts, but to avoid collisions they should be defined in IANA JSON Web Token Registry)
+		
+		private claims:(created to share information between parties that agree on using them)
+		
+		claims is Base64Url encoded, so can be readable by anyone, so do not put secret information in the payload or header unless it is encrypted//
+		
+三：Signature: (used to verify the message wasn't changed along the way, and in case of signed with a private key, can also tell who is the sender)
+	contains:
+		algorithm in header
+		encoded header
+		encoded payload
+		secret (256-bit) stated from jwt official website
+		
+		For example: if you want to use HMAC SHA256 algorithm, the signature will be created in the following way:
+		HMACSHA256(
+		  base64UrlEncode(header) + "." +
+		  base64UrlEncode(payload),
+		  secret)

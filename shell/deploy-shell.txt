@@ -1,0 +1,37 @@
+#!/bin/sh
+
+if [ -z "$1" ];
+then
+  echo "Usage: ${0} site1 | site2 | site3"
+  exit 0
+fi
+set -x
+
+env=${1}
+
+PORT="4503"
+USER="centos"
+PATH="/home/centos"
+
+if /usr/bin/[ "site1" == "${env}" ]; then
+  SERVER="192.168.122.124"
+fi
+if /usr/bin/[ "site2" == "${env}" ]; then
+  SERVER="192.168.122.13"
+fi
+if /usr/bin/[ "site3" == "${env}" ]; then
+  SERVER="192.168.122.158"
+fi
+
+echo "Deploying to ${env}"
+
+/bin/chmod 400 id_rsa
+
+/usr/bin/ssh -f -N -T -M -i id_rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -L ${PORT}:${SERVER}:4503 ubuntu@192.168.203.66
+SERVER="127.0.0.1"
+
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+./mvnw install -P auto-deploy-all-publish
+
+#/usr/bin/killall ssh

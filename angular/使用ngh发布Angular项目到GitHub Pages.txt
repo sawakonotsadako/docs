@@ -1,0 +1,21 @@
+﻿https://alligator.io/angular/deploying-angular-app-github-pages/
+
+
+npm install -g angular-cli-ghpages
+
+ng build --prod --base-href "https://<user-name>.github.io/<repo>/"
+
+ngh --dir dist/sawakonotsadako --message="deploy message" --branch=master (一定要在master branch才行)
+
+
+You can optionally add a message to the commit when deploying:
+
+$ ngh --message="First deploy"
+
+You can also specify which branch to deploy:
+
+$ ngh --branch=production
+
+And finally, you can always do a dry run before actually deploying to see the output:
+
+$ ngh --dry-run

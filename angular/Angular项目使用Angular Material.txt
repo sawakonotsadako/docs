@@ -1,0 +1,35 @@
+﻿
+Reference: https://material.angular.io/guide/getting-started
+
+Step 1: Install Angular Material, Angular CDK and Angular Animations
+ng add @angular/material
+
+Step 2: Configure animations
+@NgModule({
+  imports: [MatButtonModule, MatCheckboxModule],
+  exports: [MatButtonModule, MatCheckboxModule],
+})
+export class MyOwnCustomMaterialModule { }
+
+Whichever approach you use, be sure to import the Angular Material modules after Angular's BrowserModule, as the import order matters for NgModules.
+
+Step 4: Include a theme
+import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+Step 5: Gesture Support
+Some components (mat-slide-toggle, mat-slider, matTooltip) rely on HammerJS for gestures. In order to get the full feature-set of these components, HammerJS must be loaded into the application.
+
+You can add HammerJS to your application via npm, a CDN (such as the Google CDN), or served directly from your app.
+
+To install via npm, use the following command:
+npm install --save hammerjs
+
+After installing, import it on your app's entry point (e.g. src/main.ts):
+
+import 'hammerjs';
+
+Step 6 (Optional): Add Material Icons
+If you want to use the mat-icon component with the official Material Design Icons, load the icon font in your index.html:
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+

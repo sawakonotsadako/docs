@@ -1,0 +1,26 @@
+﻿HTTP与HTTPS握手的那些事
+https://www.cnblogs.com/lovesong/p/5186200.html
+
+HTTPS原理和CA证书申请（满满的干货）
+https://blog.51cto.com/11883699/2160032
+
+深入浅出HTTPS工作原理
+https://blog.csdn.net/wangtaomtk/article/details/80917081
+
+如何将.pem转换为.crt和.key？
+https://vimsky.com/article/3608.html
+
+证书，私钥，公钥，pfx,keystore,pem,der 都是什么？？
+https://blog.csdn.net/qq_30698633/article/details/77895151
+
+keyStore和truststore区别
+https://blog.csdn.net/chenzanlong123/article/details/11784143
+
+keystore--truststore
+https://www.jianshu.com/p/74df95dd575a
+
+如何制作CSR文件?
+https://www.cnblogs.com/lhj588/p/6069890.html
+
+HTTP和HTTPS协议，看一篇就够了
+https://blog.csdn.net/xiaoming100001/article/details/81109617
