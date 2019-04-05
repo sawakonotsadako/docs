@@ -1,0 +1,60 @@
+This documentation is based on https://sphard3.github.io/.
+
+Part 1: Create vultr account & create your own cloud server
+1. Go to www.vultr.com to create an account.
+
+2. Check email box to verify your account.
+
+3. Login https://my.vultr.com/.
+
+4. Fill in the billing information with AliPay.
+
+4. Create your servers
+   a. choose Server Location (Singapore)
+   b. Choose Server Type (Ubuntu18.10x64)
+   c. Choose Server Size ($5/mon)
+   d. Choose Additional Features (Enable IPv6 & Private Networking)
+   e. Set Startup Script, SSH Keys if needed (None)
+   f. Enter Server Hostname & Label (sawakonotsadako)
+
+5. Click Deploy Now.
+
+6. Wait installation completed.
+
+Part 2: Connect to your cloud server
+1. Go to Servers menu, click on your server name(it will show the Server Information you created just now)
+
+2. Find the IP Address & copy to copyboard.
+
+3. Open cmd or powershell, Input: 'ping <IP Address>' to see if it is able to connect. (Surely it can connect if no other problem)
+
+4. Open your git bash.
+
+11 Input: ssh root@<IP Address>, (if no issues, it will ssh to your cloud server you created on Vultr.)
+
+12. Till now the connection to your SS server on cloud is finished and successful if no issues.
+
+Part 3: Set up shadowsocks on your cloud server.
+1. Install Shadowsocks on your cloud server.
+   a. wget --no-check-certificate -O shadowsocks.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
+   b. chmod +x shadowsocks.sh
+   c. ./shadowsocks.sh 2>&1 | tee shadowsocks.log
+
+2. Congratuations. Shadowsocks-python server installation completed. Below is the sample output:
+
+		Congratulations, Shadowsocks-python server install completed!
+		Your Server IP        :  xxx.xxx.xxx.xxx
+		Your Server Port      :  xxxxx
+		Your Password         :  xxxxxx
+		Your Encryption Method:  xxx-xxx-xxx
+
+		Welcome to visit:https://teddysun.com/342.html
+		Enjoy it!
+
+Part 4: Get shadowsocks client for windows & connect your own SS
+1. Go to https://github.com/shadowsocks/shadowsocks-windows/releases & Download the latest Shadowsocks for windows.
+
+2. Connect to your own SS using the server information above.
+
+3. Congratulations & Enjoy your Google search!
+
