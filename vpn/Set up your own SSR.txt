@@ -1,0 +1,27 @@
+This documentation is based on https://sphard3.github.io/.
+Notes: How to create a Vultr acount & connect to cloud server please refer to part 1 & part 2 in txt file 'Set up your own SS.txt'.
+
+Part 1: Set up shadowsocks-R on your cloud server.
+1. Install SSR
+   a. wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+
+2. Set up your settings(follow the output from the ssr.sh)
+   a. port no
+   b. password
+   c. encryption
+   d. protocal
+   e. ...
+   ...
+3. Installation completed. Below is the sample output 
+
+4. Check SSR status
+   a. bash ssr.sh
+
+Part 2: Get shadowsocks-R client for windows
+1. Go to https://github.com/shadowsocksr-backup/shadowsocksr-csharp/releases
+
+2. Download the latest Shadowsocks-R for windows.
+
+3. Connect to SS server using the information above.
+
+4. Congratulations & Enjoy your Google search!

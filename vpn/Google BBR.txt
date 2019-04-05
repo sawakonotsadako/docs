@@ -1,0 +1,8 @@
+This documentation is based on https://sphard3.github.io/.
+
+1. Install BBR
+   a. wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+   b. chmod +x bbr.sh
+   c. ./bbr.sh
+
+2. Restart your VPS.
