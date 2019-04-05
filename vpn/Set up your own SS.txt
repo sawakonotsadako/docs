@@ -1,7 +1,7 @@
 This documentation is based on https://sphard3.github.io/.
 
 Part 1: Create vultr account & create your own cloud server
-1. Go to www.vultr.com to create an account.
+1. Go to www.vultr.com and create an account.
 
 2. Check email box to verify your account.
 
@@ -14,19 +14,19 @@ Part 1: Create vultr account & create your own cloud server
    b. Choose Server Type (Ubuntu18.10x64)
    c. Choose Server Size ($5/mon)
    d. Choose Additional Features (Enable IPv6 & Private Networking)
-   e. Set Startup Script, SSH Keys if needed (None)
+   e. Set Startup Script, SSH Keys (if needed)
    f. Enter Server Hostname & Label (sawakonotsadako)
 
 5. Click Deploy Now.
 
-6. Wait installation completed.
+6. Wait installation to be completed.
 
 Part 2: Connect to your cloud server
 1. Go to Servers menu, click on your server name(it will show the Server Information you created just now)
 
 2. Find the IP Address & copy to copyboard.
 
-3. Open cmd or powershell, Input: 'ping <IP Address>' to see if it is able to connect. (Surely it can connect if no other problem)
+3. Open CMD or Powershell, Input: 'ping <IP Address>' to see if it is able to connect. (Surely it can connect if no other problem)
 
 4. Open your git bash.
 
@@ -40,7 +40,7 @@ Part 3: Set up shadowsocks on your cloud server.
    b. chmod +x shadowsocks.sh
    c. ./shadowsocks.sh 2>&1 | tee shadowsocks.log
 
-2. Congratuations. Shadowsocks-python server installation completed. Below is the sample output:
+2. Congratuations! Shadowsocks-python server installation completed. Below is the sample output:
 
 		Congratulations, Shadowsocks-python server install completed!
 		Your Server IP        :  xxx.xxx.xxx.xxx
@@ -51,10 +51,12 @@ Part 3: Set up shadowsocks on your cloud server.
 		Welcome to visit:https://teddysun.com/342.html
 		Enjoy it!
 
-Part 4: Get shadowsocks client for windows & connect your own SS
-1. Go to https://github.com/shadowsocks/shadowsocks-windows/releases & Download the latest Shadowsocks for windows.
+Part 4: Get shadowsocks client for windows
+1. Go to https://github.com/shadowsocks/shadowsocks-windows/releases 
 
-2. Connect to your own SS using the server information above.
+2. Download the latest Shadowsocks for windows.
 
-3. Congratulations & Enjoy your Google search!
+3. Connect to SS server using the information above.
+
+4. Congratulations & Enjoy your Google search!
 
