@@ -1,0 +1,23 @@
+This documentation is based on https://hexo.io/docs/deployment.
+
+Part 1: Deploy your Hexo Blog to GitHub
+1. Install hexo-deployer-git
+   a. npm install hexo-deployer-git --save
+
+2. Edit root _config.yml
+      deploy:
+	    type: git   
+	    repo: <repository url>  #https://sawakonotsadako.github.io/
+	    branch: [branch] #published (recommended master)
+	    message: [message]  #leave this blank
+
+	  Notes: if your repository has a name like <username>.github.io, user and organisation pages that has this type of repository name are only published from master branch. Details please refer to:  https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages
+
+3. Upload your site
+   a. hexo clean
+   b. hexo deploy
+
+4. Go to https://<username>.github.io for verification
+
+
+	    
