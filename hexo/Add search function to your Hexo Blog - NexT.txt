@@ -1,0 +1,36 @@
+This documentation is based on https://github.com/wzpan/hexo-generator-search & https://github.com/theme-next/hexo-generator-searchdb.
+
+Part 1: Hexo-generator-searchdb
+1. Install plugin hexo-generator-searchdb
+   a. npm install hexo-generator-searchdb --save
+
+2. Config root _config.yml
+   a. search:
+  		path: search.xml
+  		field: post
+  		format: html
+  		limit: 10000
+
+3. Config themes _config.yml
+   a. set local_search: 
+   			enable: true
+
+4. Run hexo server to see if it is able to see search function.
+
+Part 2: Hexo-generator-search
+1. Install plugin hexo-generator-search
+   a. npm install hexo-generator-search --save
+
+2. Config root _config.yml
+   a. search:
+  		path: search.xml
+  		field: post
+  		content: true
+
+3. Config themes _config.yml
+   a. set local_search: 
+   			enable: true
+
+4. Run hexo server to see if it is able to see search function.
+
+Notes: The difference between plugin hexo-generator-search & hexo-generator-searchdb is, the former is written by wzpan & the latter is official plugin written by Hexo. Besides, only one 'search' key can be put in root _config.yml, otherwise will have an alert when doing hexo server.
