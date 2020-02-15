@@ -12,7 +12,7 @@ select Host,User,Password from mysql.user;
 create user test identified by '123456'; 
   
 -- 分配权限 
-grant all privileges on *.* to 'test'@'%'identified by '123456' with grant option; 
+grant all privileges on *.* to 'test'@'%' identified by '123456' with grant option; 
 
 -- 刷新mysql用户权限
 flush privileges ; 

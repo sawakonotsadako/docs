@@ -1,0 +1,1 @@
+This documentation is based on https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-convenience-script。

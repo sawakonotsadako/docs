@@ -1,5 +1,5 @@
 ﻿Linux下登录mysql：
-(1) mysql -uroot -p
+(1) mysql -uroot -p123456
 
 查看mysql版本：
 (1) mysql -v
@@ -34,5 +34,8 @@
 (2) which apache2
 (3) which vim
 
+查看Linux版本
+(1) lsb_release -a
+
 vim设置高亮：
-在命令模式下输入 set hlsearch 
+(1) 在命令模式下输入 set hlsearch 

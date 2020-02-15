@@ -1,0 +1,21 @@
+0. OS requirements
+To install Docker Engine - Community, you need the 64-bit version of one of these Ubuntu versions:
+
+Disco 19.04
+Cosmic 18.10
+Bionic 18.04 (LTS)
+Xenial 16.04 (LTS)
+
+1. Uninstall old versions
+$ sudo apt-get remove docker docker-engine docker.io containerd runc
+
+2. Install using the convenience script
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh get-docker.sh
+
+3. Uninstall Docker Engine - Community
+   a. Uninstall the Docker Engine - Community package:
+   $ sudo apt-get purge docker-ce
+   
+   b. Images, containers, volumes, or customized configuration files on your host are not automatically removed. To delete all images, containers, and volumes:
+   $ sudo rm -rf /var/lib/docker
